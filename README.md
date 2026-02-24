@@ -1,66 +1,94 @@
-# Doctor Clinic Management System
+# Doctor Clinic Management
 
-## Pages & Features
+Patient management, appointments, and clinical records system.
 
-### 1. Dashboard
-- Today's appointments count & schedule
-- Patient check-in status
-- Revenue today / this month
-- Upcoming follow-ups & reminders
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
 
-### 2. Appointments
-- Calendar view (day / week / month) by doctor
-- Book new appointment (patient, doctor, time slot, reason)
-- Reschedule / cancel with notification
-- Walk-in registration
-- Appointment status (scheduled → checked-in → in-progress → completed)
-- Waitlist management
+## Tech Stack
 
-### 3. Patients
-- Patient registry with search & filters
-- Patient profile: demographics, allergies, insurance info
-- Medical history timeline
-- Add / edit patient records
-- Patient photo & ID upload
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
 
-### 4. Consultations
-- Start consultation from appointment
-- Vitals recording (BP, temperature, weight, etc.)
-- Symptoms & diagnosis entry
-- Clinical notes with templates
-- Prescription generation (medications, dosage, duration)
-- Lab test ordering
-- Referral letters
+## Getting Started
 
-### 5. Prescriptions
-- View & print prescriptions
-- Prescription history per patient
-- Drug interaction warnings
-- Medication database with search
+```bash
+npm install
+cp .env.example .env.local
+# Set VITE_CONVEX_URL to your deployment URL
+npm run dev
+```
 
-### 6. Billing
-- Generate bill from consultation & services
-- Insurance claim tracking
-- Payment recording (cash, card, insurance)
-- Invoice / receipt printing
-- Outstanding balance alerts
+## License
 
-### 7. Doctors & Staff
-- Doctor profiles with specialization & schedule
-- Staff directory
-- Working hours & availability management
-- Leave calendar
+MIT © Mehdi Nabhani
 
-### 8. Reports
-- Patient volume trends
-- Revenue by service, doctor, period
-- Common diagnoses breakdown
-- Appointment no-show rate
-- Export as PDF / CSV
+---
 
-### 9. Settings
-- Clinic profile & branding
-- Consultation fee structure
-- Time slot duration & availability
-- Notification templates (SMS / email reminders)
-- User roles & permissions
+<details>
+<summary>📋 Original Feature Spec</summary>
+
+# {{APP_TITLE}}
+
+{{APP_DESCRIPTION}}
+
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
+
+## Tech Stack
+
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 22+
+- A running [shared Convex backend](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+
+### Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Create .env.local with your Convex URL
+cp .env.example .env.local
+# Edit .env.local and set VITE_CONVEX_URL to your deployment URL
+
+# Start the dev server
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) to view the app.
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start Vite dev server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run typecheck` | Run TypeScript type checking |
+
+## Project Structure
+
+```
+src/
+  main.tsx              # Entry point with ConvexAuthProvider
+  App.tsx               # Auth routing (Landing vs Dashboard)
+  App.css               # Component styles
+  index.css             # Global styles & design tokens
+  components/
+    Landing.tsx          # Marketing/landing page
+    SignIn.tsx           # Auth form (sign-in/sign-up)
+    Dashboard.tsx        # Authenticated app shell
+api.ts                   # Convex API types (from shared backend)
+```
+
+## License
+
+MIT © Mehdi Nabhani
+
+</details>
